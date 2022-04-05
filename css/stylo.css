@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+  }
+
+body{
+    
+ 
+
+}
+
+.espaciado {
+    border: 1px solid #333;
+    background-color: rgb(189, 0, 0);
+    height: 500px;
+    padding-top: 10px;
+    margin-bottom: 5px;
+}
+
+#seccion{
+
+    background-color: cornflowerblue;
+    height: 100px;
+    border-bottom: 2px solid #333;
+    margin-bottom: 15px;
+}
+
+
+
+#contenedor_banner{
+background-color: rgb(125, 86, 161);
+
+}
+
+
+#banner{
+    background-image: url("../img/dogbanner.jpg") ;
+    
+    border: 1px solid #333;
+    background-color: rgb(228, 153, 153);
+    height: 250px;
+    padding-top: 10px;
+    margin-bottom: 5px;
+
+
+}
+
+#busqueda{}
+
+
+
+#categorias{
+    height:auto;
+
+
+}
