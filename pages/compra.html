@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/svg+xml" href="/img/store.ico" sizes="any">
+    <title>Kozuki Store</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="bg-purple-300 border-white-200 px-2 sm:px-4 py-2.5 rounded">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+          <a href="https://flowbite.com" class="flex items-center">
+              <img src="/img/icon.png" class="mr-3 h-6 sm:h-9" alt="Kozuki Logo" />
+              <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Kozuki Store</span>
+          </a>
+          <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            <svg class="hidden w-6 h-6" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+              <li>
+                <a href="#" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Inicio</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">Productos</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">¿Como comprar?</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">Sobre Nosotros</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    
+    <!-- COMPRA -->
+    <div class="compra grid grid-cols-6">
+    <!-- RESUMEN ENVIO -->
+    <div class="bg-zinc-200 col-span-4 px-8 min-w-full">
+    <!-- DIRECCIONES -->
+    <div>
+      <fieldset> 
+      <h2 class="text-lg my-2">¿Como quieres recibir tu compra?</h2>
+        <!-- OPCION 1 --> 
+        <div class="flex items-center mb-4 focus-visible:outline">
+          <input id="country-option-1" type="radio" name="countries" value="USA" class="sr-only peer" aria-labelledby="country-option-1" aria-describedby="country-option-1" checked>
+          <label for="country-option-1" class="w-full mx-1 rounded-md peer-checked:bg-zinc-200 peer-checked:outline outline-purple-800 cursor-pointer">  
+            <div class="flex  bg-gray-100 w-full justify-between items-center px-4 py-1 rounded-md">
+            <div class="w-full">
+              <h2 class="text-lg">Mi casa</h2>
+              <h4>Dirección #100 Real, Psje Verdadero 1</h4>
+            </div>
+            <a class="text-purple-800" href="caca">editar</a>
+            </div>
+          </label>
+        </div>
+        <!-- OPCION 2 -->          
+        <div class="flex items-center mb-4 focus-visible:outline">
+          <input id="country-option-2" type="radio" name="countries" value="USA" class="sr-only peer" aria-labelledby="country-option-2" aria-describedby="country-option-2">
+          <label for="country-option-2" class="w-full mx-1 rounded-md peer-checked:bg-zinc-200 peer-checked:outline outline-purple-800 cursor-pointer">  
+            <div class="flex  bg-gray-100 w-full justify-between items-center px-4 py-1 rounded-md">
+            <div class="w-full">
+              <h2 class="text-lg">Mi oficina</h2>
+              <h4>Dirección #100 Real, Psje Verdadero 2</h4>
+            </div>
+            <a class="text-purple-800" href="caca">editar</a>
+            </div>
+          </label>
+        </div>
+        <!-- OPCION 3 (Desactivada) --> 
+        <div class="flex items-center mb-4 focus-visible:outline">
+          <input id="option-disabled" type="radio" name="countries" value="USA" class="sr-only peer" aria-labelledby="option-disabled" aria-describedby="option-disabled" disabled>
+          <label for="option-disabled" class="w-full mx-1 rounded-md peer-checked:bg-zinc-200 peer-checked:outline outline-purple-800 cursor-not-allowed">  
+            <div class="flex  bg-gray-400 w-full justify-between items-center px-4 py-1 rounded-md">
+            <div class="w-full">
+              <h2 class="text-lg">Mi casa 2</h2>
+              <h4>Dirección #100 Real, Psje Verdadero 3</h4>
+            </div>
+            <a class="text-purple-900" href="caca">editar</a>
+            </div>
+          </label>
+        </div>
+      </fieldset>
+        <a class="grid bg-purple-800 h-14 mb-8 justify-items-center content-center rounded-md hover:bg-purple-900" href="caca">
+          <h2 class="text-lg text-gray-200">Añadir direccion</h2>
+        </a>
+    </div>
+    <!-- METODO PARA RECIBIR PRODUCTO -->
+    <div>
+      <fieldset>
+        <!-- ENVIO -->
+        <h2 class="text-xl my-2">Recibir productos</h2>
+        <div class="flex items-center mb-4 focus-visible:outline">
+          <input id="envio" type="radio" name="tipo-envio" value="envio" class="sr-only peer" aria-labelledby="envio" aria-describedby="envio">
+          <label for="envio" class="w-full mx-1 rounded-md peer-checked:bg-zinc-200 peer-checked:outline outline-purple-800 cursor-pointer">  
+            <div class="flex  bg-gray-100 w-full justify-between items-center px-4 py-1 rounded-md">
+            <div class="w-full">
+              <h2 class="text-lg">Llega entre mañana y el jueves</h2>
+              <h4>Envio a cargo de Blue Express</h4>
+            </div>
+            </div>
+          </label>
+        </div>
+        <!-- RETIRO -->
+        <h2 class="text-xl my-2">Retirar productos</h2>
+        <div class="flex items-center mb-4 focus-visible:outline">
+          <input id="retiro" type="radio" name="tipo-envio" value="retiro" class="sr-only peer" aria-labelledby="retiro" aria-describedby="retiro">
+          <label for="retiro" class="w-full mx-1 rounded-md peer-checked:bg-zinc-200 peer-checked:outline outline-purple-800 cursor-pointer">  
+            <div class="flex  bg-gray-100 w-full justify-between items-center px-4 py-1 rounded-md">
+            <div class="w-full">
+              <h2 class="text-lg">Casa Matriz</h2>
+              <h4>Dirección #100 Real, Psje Verdadero 2</h4>
+            </div>
+            </div>
+          </label>
+        </div>
+      </fieldset>
+      <div class="grid grid-cols-4">
+      <button type="button" class="focus:outline-none text-white bg-purple-800 hover:bg-purple-900 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-800 dark:hover:bg-purple-900 dark:focus:ring-purple-900 col-end-6 col-span-1">Continuar</button>
+      </div>
+    </div>
+    </div>
+    <!-- RESUMEN PEDIDO -->    
+    <div class="bg-zinc-300 col-span-2 p-2">
+      <div class="flex">
+        <img class="object-scale-down h-20 w-20" src="/img/productos/churu-56g.jpg" alt="churu 56gr">
+        <div class="flex flex-col flex-grow">
+        <h2 class="text-lg min-w-full">Snack gato churu atún y salmón</h2>
+        <h3>56 g</h3>
+        <h1 class="text-right text-lg text-violet-900">$2.900</h1>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- FOOTER -->
+
+    <div class="">
+      <footer id="footer" class="relative z-50 bg-purple-700">
+          <div tabindex="0" aria-label="footer" class="focus:outline-none border-t   py-16">
+              <div class="mx-auto container px-4 xl:px-12 2xl:px-4">
+                  <div class="lg:flex">
+                      <div class="w-full lg:w-1/2 mb-16 lg:mb-0 flex">
+                          <div class="w-full lg:w-1/2 px-6">
+                              <ul>
+                                  <li><a class="focus:outline-none focus:underline  text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Inicio</a></li>
+                                  <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Productos</a></li>
+                                  <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">¿Como comprar?</a></li>
+                                  <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Sobre Nosotros</a></li>
+                                  <li class="mt-6"><a href="javascript:void(0)" class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Contactanos</a></li>
+                              </ul>
+                          </div>
+                          <div class="w-full lg:w-1/2 px-6">
+                              <ul>
+                                  <li><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Marcas Asociadas</a></li>
+                                  <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Blog</a></li>
+                                  <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Trabaja con nosotros</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="w-full lg:w-1/2 flex">
+                          <div class="w-full lg:w-1/2 px-6">
+                              <ul>
+                                  <li><a href="javascript:void(0)" class="focus:underline focus:outline-none text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Politicas de privacidad</a></li>
+                                  <li class="mt-6"><a class="focus:underline focus:outline-none text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Terminos de servicio</a></li>
+                              </ul>
+                          </div>
+                          <div class="w-full lg:w-1/2 px-6 flex flex-col justify-between">
+                              <div class="flex items-center mb-6">
+                                  
+                                  <a aria-label="Twitter"  href="javascript:void(0)" class="ml-4">
+                                      <div class="">
+                                         <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_1-svg2.svg" alt="Twitter">
+                                         <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_1-svg2dark.svg" alt="Twitter">
+                                      </div>
+                                  </a>
+                              </div>
+                              
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </footer>
+    </div>
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+    <script src="/index.js"></script>
+</body>
+</html>
