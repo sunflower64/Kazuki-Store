@@ -7,6 +7,112 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/svg+xml" href="img/store.ico" sizes="any">
     <title>Kozuki Store</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+//        $(document).ready(function(){
+//            $("").blur(function(){
+//                
+//            });
+//        });
+
+
+
+        // Campo vacio = bordes rojos + alerta 
+
+        
+
+        $(document).ready(function(){
+
+            var alerta_nombre ="";
+            var alerta_apellido ="";
+            var alerta_contrasena ="";
+            var alerta_contrasena ="";
+
+            var alerta_email ="";
+
+
+            $('.form_alerta').hide();
+            $("").hide();
+
+            
+            
+            $("#form_email").blur(function(){
+               //$("#form_email").hide();
+
+               if($('#form_email').val().trim().length==0){
+                $('#alerta_email').show();
+
+                event.preventDefault();
+
+               }
+
+               if($('#form_email').val().trim().length>5){
+                $('#alerta_email').hide();
+
+               }
+            });
+
+
+
+            $("#form_nombre").blur(function(){
+                if($('#form_nombre').val().trim().length==0){
+
+                alerta_nombre ="*Llenar campo obligatorio";
+                $("#alerta_nombre").html(alerta_nombre);
+                
+                $('#alerta_nombre').show();
+
+                
+
+
+                event.preventDefault();
+
+               }
+
+               if($('#form_nombre').val().trim().length>5){
+                $('#alerta_nombre').hide();
+
+                
+
+               }
+
+
+                
+
+
+
+            });
+
+            $("#form_").blur(function(){
+
+            });
+
+
+            $("#form_").blur(function(){
+
+            });
+
+
+
+
+
+
+
+
+
+        });
+
+        
+
+
+
+
+
+
+
+    </script>
     
 
 
@@ -15,10 +121,9 @@
 
 <body>
     <div class=" mx-auto">
-        <p>ola para idea futura : https://tailwindcomponents.com/component/login-7</p>
 
 
-        <nav class="bg-purple-300 border-white-200 px-2 sm:px-4 py-2.5 rounded "> <!-- NAV-->
+        <nav class="bg-pink-700 border-white-200 px-2 sm:px-4 py-2.5 rounded "> <!-- NAV-->
             <div class="container flex flex-wrap justify-between items-center mx-auto">
               <a href="index.html" class="flex items-center">
                   <img src="img/icon.png" class="mr-3 h-6 sm:h-9" alt="Kozuki Logo" />
@@ -52,176 +157,82 @@
           </nav>
 
 
+<!--      PANTALLAAA      -->
 
-          <div class="grid grid-cols-12"> <!--      PANTALLAAA      -->
-            <div class="grid col-span-4 flex justify-center bg-gray-100">
-                <form class="w-full max-w-lg  "> <!----------------------- COMIENZO FORM -->
+          <div class="grid grid-cols-12 " > 
 
-                    <div class="text-base text-2xl  text-center w-full my-5">CREA TU CUENTA</div>
-                        <hr class="border-t border-gray-300 mb-6">
-                    
-
-                    <div class=" flex flex-wrap -mx-3 mb-6 "> <!----------------------- EMAIL -->
-
-                        <div class="w-full  px-3 mb-6 md:mb-0">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_email">
-                            Email
-                            </label>
-                            <input class="rounded-md shadow-lg appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                             id="form_email" type="email" placeholder="correo@mail.com">
-                            <p class="text-red-500 text-xs italic">* VALIDACION.</p>
-                        </div>
-
-                    </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-6"> <!---------------------------------- NOMBRE USUARIO  -->
-                        
-                        <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_nombre">
-                            NOMBRE
-                            </label>
-                            <input class="shadow-lg appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
-                            id="form_nombre" type="text" placeholder="Armando">
-                            <p class="text-red-500 text-xs italic">* VALIDACION.</p>
-                        </div>
-
-                        <div class="w-full md:w-1/2 px-3">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_apellido">
-                            APELLIDO
-                            </label>
-                            <input class="shadow-lg appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200  py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                             id="form_apellido" type="text" placeholder="Paredes">
-                             <p class="text-red-500 text-xs italic">* VALIDACION.</p>
-                        </div>
-                    </div>
+<!------------------ FORM REGISTRO--------------->
 
 
 
-                    <div class="flex flex-wrap -mx-3 mb-6"> <!------------------------------ CONTRASEÑA -->
+            <div id="form_registro" class=" 
+                grid lg:col-span-4 col-span-12 grid-rows-1 flex shrink-0  justify-center min-w-screen   ">
 
-                        <div class="w-full md:w-1/2 px-3 md:mb-0">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_contraseña">
-                            Contraseña
-                            </label>
-                            <input class="shadow-lg appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                            id="form_contraseña" type="password" placeholder="******************">
-                            <p class="text-red-600 text-xs italic">* AAAAAAAAAAAAAAAAAAA validacion</p>
-                        </div>
-                        <div class="w-full md:w-1/2 px-3 md:mb-0">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_rep_contraseña">
-                            Confirmar contraseña
-                            </label>
-                            <input class="shadow-lg appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                             id="form_rep_contraseña" type="password" placeholder="******************">
-                            <p class="text-red-600 text-xs italic">* AAAAAAAAAAAAAAAAAAA validacion</p>
-                        </div>
-                    </div>
+                <div class="max-h-screen flex items-center row-span-1  ">
+                    <!----------------------- COMIENZO FORM -->
+                    <form name="form_registro" action="" method="GET" enctype="multipart/form-data"  class="w-full max-w-lg  "> 
 
-                    <fieldset id="" class="my-6" >
-
-                        <div class="flex items-center mb-5">
-                            <input checked id="checkbox-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-                            <label for="checkbox-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree to the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
-                        </div>
-
-                        <div class="flex items-center mb-5">
-                            <input checked id="checkbox-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-                            <label for="checkbox-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree to the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
-                        </div>
-
-
-                    </fieldset>
-
-                    <hr class="border-t border-gray-300 mb-10  ">
-
-                    <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-sm 
-                                hover:bg-gray-700 focus:outline-none focus:shadow-outline shadow-lg bg-gray-400" type="submit">
-                                Registrar Cuenta
-                            </button>
-
-
-
-                </form>
-                
-            </div>
-            
-            <!--IMAGEN -->
-            <div class=" grid col-span-8 bg-red-200" >
-                <img src="img/Para fondo.jpg" class="object-contain"
-                alt="">
-            </div>
-            
-        </div>
-
-
-            <div class=" border border-p-5 px-6 py-6 w-full text-gray-800 grid grid-cols-8 
-            bg-gradient-to-tl from-purple-700 via-purple-400 to-purple-300   ">
-
-        
-                <div class=" col-start-2 col-end-8  flex justify-center shadow-xl  "> 
-                    
-
-                    
-                    <form class="w-full max-w-lg  "> <!----------------------- COMIENZO FORM -->
-
-                        <div class="text-base text-2xl  text-center w-full mb-10">CREA TU CUENTA</div>
+                        <div class="text-base text-2xl  text-center w-full my-5">CREA TU CUENTA</div>
                             <hr class="border-t border-gray-300 mb-6">
                         
+    <!----------------------- EMAIL -->
 
-                        <div class=" flex flex-wrap -mx-3 mb-6 "> <!----------------------- EMAIL -->
+                        <div class=" flex flex-wrap -mx-3 mb-3  "> 
 
-                            <div class="w-full  px-3 mb-6 md:mb-0">
+                            <div class="w-full  px-3 mb-3 md:mb-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_email">
                                 Email
                                 </label>
-                                <input class="rounded-md shadow-lg appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                 id="form_email" type="email" placeholder="correo@mail.com">
-                                <p class="text-red-500 text-xs italic">* VALIDACION.</p>
+
+                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-pink-300  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                                id="form_email" type="email" placeholder="correo@mail.com">
+                                <p id="alerta_email" class="form_alerta text-red-500 text-xs italic"></p>
                             </div>
 
                         </div>
 
-
-                        <div class="flex flex-wrap -mx-3 mb-6"> <!---------------------------------- NOMBRE USUARIO  -->
+    <!---------------------------------- NOMBRE USUARIO  -->                   
+                        <div class="flex flex-wrap -mx-3 mb-6"> 
                             
                             <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_nombre">
                                 NOMBRE
                                 </label>
-                                <input class="shadow-lg appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
                                 id="form_nombre" type="text" placeholder="Armando">
-                                <p class="text-red-500 text-xs italic">* VALIDACION.</p>
+                                <p id="alerta_nombre" class="form_alerta text-red-500 text-xs italic"></p>
                             </div>
 
                             <div class="w-full md:w-1/2 px-3">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_apellido">
                                 APELLIDO
                                 </label>
-                                <input class="shadow-lg appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200  py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                 id="form_apellido" type="text" placeholder="Paredes">
-                                 <p class="text-red-500 text-xs italic">* VALIDACION.</p>
+                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                                id="form_nombre" type="text" placeholder="Paredes">
+                                <p id="alerta_nombre" class="form_alerta text-red-500 text-xs italic"></p>
                             </div>
                         </div>
 
 
+    <!------------------------------ CONTRASEÑA -->
 
-                        <div class="flex flex-wrap -mx-3 mb-6"> <!------------------------------ CONTRASEÑA -->
+                        <div class="flex flex-wrap -mx-3 mb-6"> 
 
-                            <div class="w-full md:w-1/2 px-3 md:mb-0">
+                            <div class="w-full md:w-1/2 px-3 md:mb-0 mb-5">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_contraseña">
                                 Contraseña
                                 </label>
-                                <input class="shadow-lg appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
+                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
                                 id="form_contraseña" type="password" placeholder="******************">
-                                <p class="text-red-600 text-xs italic">* AAAAAAAAAAAAAAAAAAA validacion</p>
+                                <p class="form_alerta text-red-600 text-xs italic">* AAAAAAAAAAAAAAAAAAA validacion</p>
                             </div>
                             <div class="w-full md:w-1/2 px-3 md:mb-0">
-                                <label class="shadow-lg block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_rep_contraseña">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_rep_contraseña">
                                 Confirmar contraseña
                                 </label>
-                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                 id="form_rep_contraseña" type="password" placeholder="******************">
-                                <p class="text-red-600 text-xs italic">* AAAAAAAAAAAAAAAAAAA validacion</p>
+                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                                id="form_rep_contraseña" type="password" placeholder="******************">
+                                <p class="form_alerta text-red-600 text-xs italic">* AAAAAAAAAAAAAAAAAAA validacion</p>
                             </div>
                         </div>
 
@@ -243,121 +254,84 @@
                         <hr class="border-t border-gray-300 mb-10  ">
 
                         <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-sm 
-                                    hover:bg-gray-700 focus:outline-none focus:shadow-outline shadow-lg" type="submit">
+                                    hover:bg-gray-700 focus:outline-none focus:shadow-outline shadow-lg bg-gray-400" type="submit">
                                     Registrar Cuenta
                                 </button>
-
-
 
                     </form>
 
                 </div>
 
             </div>
+            
+<!---------------------------------IMAGEN -->
 
 
-            <!-- component -->
-            <div class="flex justify-center px-6 my-12">
-                <!-- Row -->
-                <div class="w-full xl:w-3/4 lg:w-11/12 flex">
-                    <!-- Col -->
-                    <div
-                        class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
-                        style="background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800')"
-                    ></div>
-                    <!-- Col -->
-                    <div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
-                        <h3 class="pt-4 text-2xl text-center">Create an Account!</h3>
-                        <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
-                            <div class="mb-4 md:flex md:justify-between">
-                                <div class="mb-4 md:mr-2 md:mb-0">
-                                    <label class="block mb-2 text-sm font-bold text-gray-700" for="firstName">
-                                        First Name
-                                    </label>
-                                    <input
-                                        class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                        id="firstName"
-                                        type="text"
-                                        placeholder="First Name"
-                                    />
-                                </div>
-                                <div class="md:ml-2">
-                                    <label class="block mb-2 text-sm font-bold text-gray-700" for="lastName">
-                                        Last Name
-                                    </label>
-                                    <input
-                                        class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                        id="lastName"
-                                        type="text"
-                                        placeholder="Last Name"
-                                    />
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
-                                    Email
-                                </label>
-                                <input
-                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                    id="email"
-                                    type="email"
-                                    placeholder="Email"
-                                />
-                            </div>
-                            <div class="mb-4 md:flex md:justify-between">
-                                <div class="mb-4 md:mr-2 md:mb-0">
-                                    <label class="block mb-2 text-sm font-bold text-gray-700" for="password">
-                                        Password
-                                    </label>
-                                    <input
-                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                        id="password"
-                                        type="password"
-                                        placeholder="******************"
-                                    />
-                                    <p class="text-xs italic text-red-500">Please choose a password.</p>
-                                </div>
-                                <div class="md:ml-2">
-                                    <label class="block mb-2 text-sm font-bold text-gray-700" for="c_password">
-                                        Confirm Password
-                                    </label>
-                                    <input
-                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                        id="c_password"
-                                        type="password"
-                                        placeholder="******************"
-                                    />
-                                </div>
-                            </div>
-                            <div class="mb-6 text-center">
-                                <button
-                                    class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
-                                    type="button"
-                                >
-                                    Register Account
-                                </button>
-                            </div>
-                            <hr class="mb-6 border-t" />
-                            <div class="text-center">
-                                <a
-                                    class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                                    href="#"
-                                >
-                                    Forgot Password?
-                                </a>
-                            </div>
-                            <div class="text-center">
-                                <a
-                                    class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                                    href="./index.html"
-                                >
-                                    Already have an account? Login!
-                                </a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div class=" md:col-span-8  lg:block hidden bg-red-200" >
+                <img src="img/Para fondo.jpg" class="object-cover "
+                alt="">
             </div>
+
+
+
+
+            
+<!---------------------------------FORM INICIO SESION -->
+
+            <div id="form_ingresar" class="grid lg:col-span-4 sm:col-span-12  flex justify-center min-w-screen hidden   ">
+                <!----------------------- COMIENZO FORM -->
+                <form name="form_ingresar" action="" method="GET" enctype="multipart/form-data"  class="w-full max-w-lg  "> 
+
+                    <div class="text-base text-2xl  text-center w-full my-10">INICIAR SESION</div>
+                        <hr class="border-t border-gray-300 my-10">
+                    
+<!----------  -  ------------ EMAIL -->
+
+                    <div class=" flex flex-wrap w-full mx-3 mb-6 "> 
+
+                        <div class="w-full  mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_email">
+                            Email
+                            </label>
+
+                            <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-pink-300  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                                id="form_email" type="email" placeholder="correo@mail.com">
+                            <p id="alerta_email" class="form_alerta text-red-500 text-xs italic">* VALIDACION.</p>
+                        </div>
+
+                    </div>
+
+<!------------------------------ CONTRASEÑA -->
+
+                    <div class="flex flex-wrap w-full mx-3 mb-6"> 
+
+                        <div class="w-full  md:mb-0 mb-5">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_contraseña">
+                            Contraseña
+                            </label>
+                            <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
+                            id="form_contraseña" type="password" placeholder="******************">
+                            <p class="form_alerta text-red-600 text-xs italic">* AAAAAAAAAAAAAAAAAAA validacion</p>
+                        </div>
+                    </div>
+
+                    <hr class="border-t border-gray-300 mb-10  ">
+
+                    <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-sm 
+                                hover:bg-gray-700 focus:outline-none focus:shadow-outline shadow-lg bg-gray-400" type="submit">
+                                Acceder
+                            </button>
+
+
+
+                </form>
+                                
+            </div>
+            
+        </div>
+
+
+
 
 
 
@@ -385,8 +359,8 @@
 
     <!-- FOOTER -->
      
-    <div class="pt-12">
-        <footer id="footer" class="relative z-50 bg-purple-700">
+    <div class="">
+        <footer id="footer" class="relative z-50 bg-pink-700">
             <div tabindex="0" aria-label="footer" class="focus:outline-none border-t   py-16">
                 <div class="mx-auto container px-4 xl:px-12 2xl:px-4">
                     <div class="lg:flex">
