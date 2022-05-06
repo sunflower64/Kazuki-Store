@@ -17,11 +17,7 @@
 //            });
 //        });
 
-
-
-        // Campo vacio = bordes rojos + alerta 
-
-        
+    // Campo vacio = bordes rojos + alerta 
 
         $(document).ready(function(){
 
@@ -57,31 +53,26 @@
 
 
             $("#form_nombre").blur(function(){
-                if($('#form_nombre').val().trim().length==0){
 
-                alerta_nombre ="*Llenar campo obligatorio";
-                $("#alerta_nombre").html(alerta_nombre);
-                
-                $('#alerta_nombre').show();
-
-                
+    
 
 
-                event.preventDefault();
+                    if($('.form_').val().trim().length==0){
 
-               }
-
-               if($('#form_nombre').val().trim().length>5){
-                $('#alerta_nombre').hide();
-
-                
-
-               }
-
-
-                
-
-
+                        alerta_nombre ="*Llenar campo obligatorio";
+                        $("#alerta_nombre").html(alerta_nombre);
+                        
+                        $('#alerta_nombre').show();
+        
+        
+                        event.preventDefault();
+        
+                       }
+        
+                       if($('.form_').val().trim().length>5){
+                        $('#alerta_nombre').hide();
+           
+                       }
 
             });
 
@@ -89,37 +80,34 @@
 
             });
 
+// TOGLE DE VISIBILIDAD PARA REGISTRO E INGRESO
+            $(".activar_registro").click(function(){
 
-            $("#form_").blur(function(){
+                var div_registro = document.getElementById("form_registro");
+                var div_ingreso = document.getElementById("form_ingreso");
+
+                div_registro.classList.remove("hidden");
+
+                div_ingreso.classList.add("hidden");
 
             });
 
 
 
-
-
+            
 
 
 
 
         });
-
-        
-
-
-
-
-
-
-
     </script>
     
-
-
 
 </head>
 
 <body>
+
+
     <div class=" mx-auto">
 
 
@@ -165,10 +153,11 @@
 
 
 
-            <div id="form_registro" class=" 
+            <div id="form_registro" class="hidden
                 grid lg:col-span-4 col-span-12 grid-rows-1 flex shrink-0  justify-center min-w-screen   ">
 
-                <div class="max-h-screen flex items-center row-span-1  ">
+                <div class="max-h-screen flex items-center row-span-1 px-10  ">
+
                     <!----------------------- COMIENZO FORM -->
                     <form name="form_registro" action="" method="GET" enctype="multipart/form-data"  class="w-full max-w-lg  "> 
 
@@ -176,7 +165,6 @@
                             <hr class="border-t border-gray-300 mb-6">
                         
     <!----------------------- EMAIL -->
-
                         <div class=" flex flex-wrap -mx-3 mb-3  "> 
 
                             <div class="w-full  px-3 mb-3 md:mb-0">
@@ -190,7 +178,6 @@
                             </div>
 
                         </div>
-
     <!---------------------------------- NOMBRE USUARIO  -->                   
                         <div class="flex flex-wrap -mx-3 mb-6"> 
                             
@@ -198,7 +185,7 @@
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_nombre">
                                 NOMBRE
                                 </label>
-                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
+                                <input class="form_ rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
                                 id="form_nombre" type="text" placeholder="Armando">
                                 <p id="alerta_nombre" class="form_alerta text-red-500 text-xs italic"></p>
                             </div>
@@ -207,8 +194,8 @@
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_apellido">
                                 APELLIDO
                                 </label>
-                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
-                                id="form_nombre" type="text" placeholder="Paredes">
+                                <input class="form_ rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                                id="form_apellido" type="text" placeholder="Paredes">
                                 <p id="alerta_nombre" class="form_alerta text-red-500 text-xs italic"></p>
                             </div>
                         </div>
@@ -236,27 +223,20 @@
                             </div>
                         </div>
 
-                        <fieldset id="" class="my-6" >
+                        <fieldset id="" class="my-3" >
 
                             <div class="flex items-center mb-5">
                                 <input checked id="checkbox-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-                                <label for="checkbox-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree to the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
+                                <label for="checkbox-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">accepo los <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terminos y condiciones</a>.</label>
                             </div>
-
-                            <div class="flex items-center mb-5">
-                                <input checked id="checkbox-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-                                <label for="checkbox-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree to the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
-                            </div>
-
-
                         </fieldset>
-
-                        <hr class="border-t border-gray-300 mb-10  ">
 
                         <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-sm 
                                     hover:bg-gray-700 focus:outline-none focus:shadow-outline shadow-lg bg-gray-400" type="submit">
                                     Registrar Cuenta
-                                </button>
+                        </button>
+
+                        <p class="flex jusify-center">Ya tienes cuenta? <button class="activar_registro text-base text-purple-700">ingresa aqui</button></p>
 
                     </form>
 
@@ -273,59 +253,64 @@
             </div>
 
 
+<!---------------------------------FORM 2  INICIO SESION -->
 
+            <div id="form_ingreso" class=" min-w-screen min-h-screen 
+            grid lg:col-span-4  col-span-12 grid-rows-1 flex shrink-1  justify-center  pb-10 sm:p-0 lg:pb-0 ">
 
-            
-<!---------------------------------FORM INICIO SESION -->
-
-            <div id="form_ingresar" class="grid lg:col-span-4 sm:col-span-12  flex justify-center min-w-screen hidden   ">
-                <!----------------------- COMIENZO FORM -->
-                <form name="form_ingresar" action="" method="GET" enctype="multipart/form-data"  class="w-full max-w-lg  "> 
-
-                    <div class="text-base text-2xl  text-center w-full my-10">INICIAR SESION</div>
-                        <hr class="border-t border-gray-300 my-10">
+                <div class="w-full max-h-screen flex items-center row-span-1 px-10  ">
                     
-<!----------  -  ------------ EMAIL -->
+                    <!----------------------- COMIENZO FORM -->
+                    <form name="form_ingreso" action="" method="GET" enctype="multipart/form-data"  class="w-full max-w-lg  "> 
 
-                    <div class=" flex flex-wrap w-full mx-3 mb-6 "> 
+                        <div class="text-base text-2xl  text-center w-full my-5">Inicia Sesion</div>
+                            <hr class="border-t border-gray-300 mb-6">
+                        
+                <!----------------------- EMAIL -->
 
-                        <div class="w-full  mb-6 md:mb-0">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_email">
-                            Email
-                            </label>
+                        <div class=" flex flex-wrap -mx-3 mb-3  "> 
 
-                            <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-pink-300  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                            <div class="w-full  px-3 mb-3 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_email">
+                                Email
+                                </label>
+
+                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-pink-300  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
                                 id="form_email" type="email" placeholder="correo@mail.com">
-                            <p id="alerta_email" class="form_alerta text-red-500 text-xs italic">* VALIDACION.</p>
+                                <p id="alerta_email" class="form_alerta text-red-500 text-xs italic"></p>
+                            </div>
+
                         </div>
 
-                    </div>
+                <!------------------------------ CONTRASEÑA -->
 
-<!------------------------------ CONTRASEÑA -->
+                        <div class="flex flex-wrap -mx-3 mb-6"> 
 
-                    <div class="flex flex-wrap w-full mx-3 mb-6"> 
-
-                        <div class="w-full  md:mb-0 mb-5">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_contraseña">
-                            Contraseña
-                            </label>
-                            <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
-                            id="form_contraseña" type="password" placeholder="******************">
-                            <p class="form_alerta text-red-600 text-xs italic">* AAAAAAAAAAAAAAAAAAA validacion</p>
+                            <div class="w-full px-3 md:mb-0 mb-5">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_contraseña">
+                                Contraseña
+                                </label>
+                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
+                                id="form_contraseña" type="password" placeholder="******************">
+                                <p class="form_alerta text-red-600 text-xs italic">* </p>
+                            </div>              
                         </div>
-                    </div>
 
-                    <hr class="border-t border-gray-300 mb-10  ">
+                        <hr class="border-t border-gray-300 mb-10  ">
 
-                    <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-sm 
-                                hover:bg-gray-700 focus:outline-none focus:shadow-outline shadow-lg bg-gray-400" type="submit">
-                                Acceder
-                            </button>
+                        
 
+                        <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-sm 
+                                    hover:bg-gray-700 focus:outline-none focus:shadow-outline shadow-lg bg-gray-400" type="submit">
+                                    Registrar Cuenta
+                        </button>
 
+                        <p>No tienes Cuenta? <button type="button" class="activar_registro text-base text-purple-700">Registrate aqui</button></p>
 
-                </form>
-                                
+                    </form>
+
+                </div>
+
             </div>
             
         </div>
@@ -337,8 +322,7 @@
 
 
 
-            
-
+        
 
          <!-- ------------------- Para login con modal
                     
