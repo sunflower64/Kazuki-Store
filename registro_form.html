@@ -8,99 +8,57 @@
     <link rel="icon" type="image/svg+xml" href="img/store.ico" sizes="any">
     <title>Kozuki Store</title>
 
+    <link rel="stylesheet" href="css/valdiacion.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js" > </script>
+
+    <script src="js/validacion_jquery.js"></script>
+
     <script>
+        
 //        $(document).ready(function(){
 //            $("").blur(function(){
 //                
 //            });
 //        });
 
-    // Campo vacio = bordes rojos + alerta 
 
         $(document).ready(function(){
 
-            var alerta_nombre ="";
-            var alerta_apellido ="";
-            var alerta_contrasena ="";
-            var alerta_contrasena ="";
+//////// TOGLE DE VISIBILIDAD PARA REGISTRO E INGRESO
 
-            var alerta_email ="";
+            var div_registro = document.getElementById("div_registro");
+            var div_ingreso = document.getElementById("div_ingreso");
 
-
-            $('.form_alerta').hide();
-            $("").hide();
-
-            
-            
-            $("#form_email").blur(function(){
-               //$("#form_email").hide();
-
-               if($('#form_email').val().trim().length==0){
-                $('#alerta_email').show();
-
-                event.preventDefault();
-
-               }
-
-               if($('#form_email').val().trim().length>5){
-                $('#alerta_email').hide();
-
-               }
-            });
-
-
-
-            $("#form_nombre").blur(function(){
-
-    
-
-
-                    if($('.form_').val().trim().length==0){
-
-                        alerta_nombre ="*Llenar campo obligatorio";
-                        $("#alerta_nombre").html(alerta_nombre);
-                        
-                        $('#alerta_nombre').show();
-        
-        
-                        event.preventDefault();
-        
-                       }
-        
-                       if($('.form_').val().trim().length>5){
-                        $('#alerta_nombre').hide();
-           
-                       }
-
-            });
-
-            $("#form_").blur(function(){
-
-            });
-
-// TOGLE DE VISIBILIDAD PARA REGISTRO E INGRESO
             $(".activar_registro").click(function(){
 
-                var div_registro = document.getElementById("form_registro");
-                var div_ingreso = document.getElementById("form_ingreso");
-
                 div_registro.classList.remove("hidden");
-
                 div_ingreso.classList.add("hidden");
 
             });
 
+            $(".activar_ingreso").click(function(){
 
-
-            
-
-
-
-
+                div_registro.classList.add("hidden");
+                div_ingreso.classList.remove("hidden");
+            });
         });
     </script>
+
+
+    <style>
+        /* color para alertas y campos en validaciones    */
+        
+        label.error{
+            color: red;
+        }
+        input.error{
+            border-color: red;
+            
+        }
+
+    </style>
     
 
 </head>
@@ -145,7 +103,7 @@
           </nav>
 
 
-<!--      PANTALLAAA      -->
+<!--      PANTALLA     -->
 
           <div class="grid grid-cols-12 " > 
 
@@ -153,13 +111,14 @@
 
 
 
-            <div id="form_registro" class="hidden
-                grid lg:col-span-4 col-span-12 grid-rows-1 flex shrink-0  justify-center min-w-screen   ">
+            <div id="div_registro" class="hidden order-first
+                grid lg:col-span-4 col-span-12 grid-rows-1 justify-center min-w-screen    ">
 
-                <div class="max-h-screen flex items-center row-span-1 px-10  ">
+                <div class=" flex items-center row-span-1 px-5   ">
 
                     <!----------------------- COMIENZO FORM -->
-                    <form name="form_registro" action="" method="GET" enctype="multipart/form-data"  class="w-full max-w-lg  "> 
+                    <form name="form_registro"
+                    id="form_registro" action="" method="POST" enctype="multipart/form-data"  class="w-full max-w-lg flex-shrink-0  "> 
 
                         <div class="text-base text-2xl  text-center w-full my-5">CREA TU CUENTA</div>
                             <hr class="border-t border-gray-300 mb-6">
@@ -168,34 +127,34 @@
                         <div class=" flex flex-wrap -mx-3 mb-3  "> 
 
                             <div class="w-full  px-3 mb-3 md:mb-0">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_email">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="reg_email">
                                 Email
                                 </label>
 
-                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-pink-300  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
-                                id="form_email" type="email" placeholder="correo@mail.com">
+                                <input class=" rounded-md shadow-lg appearance-none block w-full text-gray-700 border-b border-pink-300  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                                id="reg_email" name="reg_email" type="email" placeholder="correo@mail.com">
                                 <p id="alerta_email" class="form_alerta text-red-500 text-xs italic"></p>
                             </div>
 
                         </div>
     <!---------------------------------- NOMBRE USUARIO  -->                   
-                        <div class="flex flex-wrap -mx-3 mb-6"> 
+                        <div class="flex flex-wrap -mx-3 mb-6 "> 
                             
                             <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_nombre">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="reg_nombre">
                                 NOMBRE
                                 </label>
                                 <input class="form_ rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
-                                id="form_nombre" type="text" placeholder="Armando">
-                                <p id="alerta_nombre" class="form_alerta text-red-500 text-xs italic"></p>
+                                id="_nombre" name="reg_nombre" type="text" placeholder="Armando">
+                                <p id="reg_nombre" class="form_alerta text-red-500 text-xs italic"></p>
                             </div>
 
                             <div class="w-full md:w-1/2 px-3">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_apellido">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="reg_apellido">
                                 APELLIDO
                                 </label>
                                 <input class="form_ rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
-                                id="form_apellido" type="text" placeholder="Paredes">
+                                id="reg_apellido" name="reg_apellido" type="text" placeholder="Paredes">
                                 <p id="alerta_nombre" class="form_alerta text-red-500 text-xs italic"></p>
                             </div>
                         </div>
@@ -206,37 +165,38 @@
                         <div class="flex flex-wrap -mx-3 mb-6"> 
 
                             <div class="w-full md:w-1/2 px-3 md:mb-0 mb-5">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_contraseña">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="reg_contraseña">
                                 Contraseña
                                 </label>
                                 <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
-                                id="form_contraseña" type="password" placeholder="******************">
-                                <p class="form_alerta text-red-600 text-xs italic">* AAAAAAAAAAAAAAAAAAA validacion</p>
+                                id="reg_contraseña" name="reg_contraseña" type="password" placeholder="******************">
+                                <p class="form_alerta text-red-600 text-xs italic"></p>
                             </div>
                             <div class="w-full md:w-1/2 px-3 md:mb-0">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_rep_contraseña">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="reg_confcontraseña">
                                 Confirmar contraseña
                                 </label>
                                 <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
-                                id="form_rep_contraseña" type="password" placeholder="******************">
-                                <p class="form_alerta text-red-600 text-xs italic">* AAAAAAAAAAAAAAAAAAA validacion</p>
+                                id="reg_confcontraseña" name="reg_confcontraseña" type="password" placeholder="******************">
+                                <p class="form_alerta text-red-600 text-xs italic"></p>
                             </div>
                         </div>
 
                         <fieldset id="" class="my-3" >
 
                             <div class="flex items-center mb-5">
-                                <input checked id="checkbox-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-                                <label for="checkbox-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">accepo los <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terminos y condiciones</a>.</label>
+                                <label for="reg_chbox" class=" mr-2 text-sm font-medium text-gray-900 dark:text-gray-300">Accepo los <a href="#" class=" text-blue-600 hover:underline dark:text-blue-500">terminos y condiciones </a> </label>
+                                
+                                <input  id="reg_chbox" name="reg_chbox" type="checkbox" value="" class="checkbox mr-4 w-5 h-5 border  text-blue-600 bg-gray-100 border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
                             </div>
                         </fieldset>
 
-                        <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-sm 
+                        <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-lg 
                                     hover:bg-gray-700 focus:outline-none focus:shadow-outline shadow-lg bg-gray-400" type="submit">
                                     Registrar Cuenta
                         </button>
 
-                        <p class="flex jusify-center">Ya tienes cuenta? <button class="activar_registro text-base text-purple-700">ingresa aqui</button></p>
+                        <p class="">Ya tienes cuenta? <button type="reset" class="activar_ingreso pb-4 text-base text-purple-700"> Ingresa aqui</button></p>
 
                     </form>
 
@@ -246,22 +206,25 @@
             
 <!---------------------------------IMAGEN -->
 
+            <div class="md:col-span-8 lg:block hidden  order-2 overflow-hidden h-full">
+                <div class="   bg-red-200 " >
+                    <img src="img/Para fondo.jpg" class="object-cover "
+                    alt="">
+                </div>
 
-            <div class=" md:col-span-8  lg:block hidden bg-red-200" >
-                <img src="img/Para fondo.jpg" class="object-cover "
-                alt="">
             </div>
+            
 
 
 <!---------------------------------FORM 2  INICIO SESION -->
 
-            <div id="form_ingreso" class=" min-w-screen min-h-screen 
-            grid lg:col-span-4  col-span-12 grid-rows-1 flex shrink-1  justify-center  pb-10 sm:p-0 lg:pb-0 ">
+            <div id="div_ingreso" class=" order-last
+                grid lg:col-span-4  col-span-12 grid-rows-1 flex-shrink-1 justify-center pb-10 sm:p-0 lg:pb-0 min-w-screen  ">
 
-                <div class="w-full max-h-screen flex items-center row-span-1 px-10  ">
+                <div class=" max-h-screen flex items-center row-span-1 px-10  ">
                     
                     <!----------------------- COMIENZO FORM -->
-                    <form name="form_ingreso" action="" method="GET" enctype="multipart/form-data"  class="w-full max-w-lg  "> 
+                    <form name="form_ingreso" id="form_ingreso" action="" method="POST" enctype="multipart/form-data"  class="w-full max-w-lg  "> 
 
                         <div class="text-base text-2xl  text-center w-full my-5">Inicia Sesion</div>
                             <hr class="border-t border-gray-300 mb-6">
@@ -271,12 +234,12 @@
                         <div class=" flex flex-wrap -mx-3 mb-3  "> 
 
                             <div class="w-full  px-3 mb-3 md:mb-0">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_email">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="ing_email">
                                 Email
                                 </label>
 
-                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-pink-300  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
-                                id="form_email" type="email" placeholder="correo@mail.com">
+                                <input class="rounded-md shadow-lg appearance-none block w-full text-gray-700 border-b border-pink-300  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                                id="ing_email" name="ing_email" type="email" placeholder="correo@mail.com">
                                 <p id="alerta_email" class="form_alerta text-red-500 text-xs italic"></p>
                             </div>
 
@@ -287,59 +250,30 @@
                         <div class="flex flex-wrap -mx-3 mb-6"> 
 
                             <div class="w-full px-3 md:mb-0 mb-5">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="form_contraseña">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="ing_contraseña">
                                 Contraseña
                                 </label>
                                 <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
-                                id="form_contraseña" type="password" placeholder="******************">
-                                <p class="form_alerta text-red-600 text-xs italic">* </p>
+                                id="ing_contraseña" name="ing_contraseña" type="password" placeholder="*****************">
+                                <p class="alerta_ text-red-600 text-xs italic"></p>
                             </div>              
                         </div>
 
                         <hr class="border-t border-gray-300 mb-10  ">
 
-                        
-
-                        <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-sm 
+                        <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-lg 
                                     hover:bg-gray-700 focus:outline-none focus:shadow-outline shadow-lg bg-gray-400" type="submit">
-                                    Registrar Cuenta
+                                    Acceder
                         </button>
 
-                        <p>No tienes Cuenta? <button type="button" class="activar_registro text-base text-purple-700">Registrate aqui</button></p>
+                        <p>No tienes Cuenta? <button type="reset" class="activar_registro pb-4 text-base text-purple-700"> Registrate aqui</button></p>
 
                     </form>
 
                 </div>
-
             </div>
-            
         </div>
-
-
-
-
-
-
-
-
-        
-
-         <!-- ------------------- Para login con modal
-                    
-         <div class="relative z-0 mb-6 w-full group border border-4">
-            <input type="" name="floating_email" class="block py-2.5 px-0 w-full text-xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-            <label for="floating_email" class="absolute bold-text-xl text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-9 scale-200 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-gray-700 peer-focus:dark:text-gray-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-200 peer-focus:-translate-y-9">Email address</label>
-        </div>
-        <div class="relative z-0 mb-6 w-full group">
-            <input type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-            <label for="floating_password" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-        </div>
-
-            -->
-
     </div>
-
-
 
     <!-- FOOTER -->
      
