@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="icon" type="image/svg+xml" href="/img/store.ico" sizes="any">
+    <title>Kozuki Store</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="bg-purple-300 border-white-200 px-2 sm:px-4 py-2.5 rounded">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+          <a href="https://flowbite.com" class="flex items-center">
+              <img src="/img/icon.png" class="mr-3 h-6 sm:h-9" alt="Kozuki Logo" />
+              <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Kozuki Store</span>
+          </a>
+          <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            <svg class="hidden w-6 h-6" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+              <li>
+                <a href="#" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Inicio</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">Productos</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">¿Como comprar?</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">Sobre Nosotros</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    
+    <!-- COMPRA -->
+    <div class="compra grid grid-cols-6">
+    <!-- PAGO -->
+    <div class="container flex justify-center flex-col bg-zinc-200 col-span-6
+    md:col-span-4 px-8 min-w-full place-content-center pt-5 md:px-20">
+      
+        <div class="card-container h-64  w-full md:w-96 relative left-0 right-0 m-auto shrink">
+  
+            <div class="front absolute h-full w-full  rounded-lg 
+            bg-gradient-to-r from-purple-800 to-purple-400 p-5 transition delay-150 duration-300 ease-in-out">
+                <div class="image flex items-center justify-between pt-5">
+                    <img src="/img/tarjeta/chip.png" class="h-10" alt="">
+                    <img id="logo-tarjeta" src="" class="logo-tarjeta h-10" alt="">
+                </div>
+                <div class="flex">
+                  <div class="card-number-box px-0 py-8 text-2xl text-white">#### #### #### ####</div>
+                  <span class="px-0 py-8 text-xl invisible">a</span>
+                </div>
+                <div class="flexbox flex">
+                    <div class="box first:mr-auto text-base text-white">
+                        <span>NOMBRE</span>
+                        <div class="card-holder-name">JUAN PEREZ</div>
+                    </div>
+                    <div class="box first:mr-auto text-base text-white">
+                        <span>EXPIRACION</span>
+                        <div class="expiration">
+                            <span class="exp-month">MM</span>
+                            <span>/</span>
+                            <span class="exp-year">AA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="back absolute h-full w-full top-0 left-0 rounded-lg text-right
+            bg-gradient-to-r from-purple-800 to-purple-400 py-5 px-0 transition delay-150 duration-300 ease-in-out">
+                <div class="stripe bg-black w-full my-2.5 mx-0 h-12"></div>
+                <div class="box py-0 px-5">
+                    <span class="text-base text-white">cvv</span>
+                    <div class="cvv-box h-12 p-2.5 mt-1 text-gray-900 bg-white rounded-lg w-full"></div>
+                    <img id="logo-tarjeta-back" src="" class="logo-tarjeta float-right mt-7 h-7" alt="">
+                </div>
+            </div>
+    
+        </div>
+      <form class="flex flex-col justify-center pt-5" action="">
+            <div class="relative z-0 w-full mb-6 group">
+                <input type="text" name="numero" class="card-number-input block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-700 peer" placeholder=" " required maxlength="19"/>
+                <label for="numero" class="peer-focus:font-medium absolute text-lg text-purple-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">NUMERO DE TARJETA</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+                <input type="text" name="nombre" class="card-holder-input block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-700 peer" placeholder=" " required maxlength="40"/>
+                <label for="nombre" class="peer-focus:font-medium absolute text-lg text-purple-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">NOMBRE DE TITULAR</label>
+            </div>
+            <div class="flex flex-row pb-5">
+            <label for="underline_select" class="sr-only">SELECCIONE MES</label>
+                <select id="underline_select" class="month-input block mr-10 w-full text-lg text-purple-500 bg-transparent border-0 border-b-2 border-purple-300 appearance-none focus:outline-none focus:ring-1 focus:border-purple-700 peer">
+                        <option value="month" selected disabled>MES</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                <label for="underline_select" class="sr-only">SELECCIONE MES</label>
+                <select id="underline_select" class="year-input block px-0 w-full text-lg text-purple-500 bg-transparent border-0 border-b-2 border-purple-300 appearance-none focus:outline-none focus:ring-1 focus:border-purple-700 peer">
+                    <option value="year" selected disabled>AÑO</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+                <input type="text" name="numero" class="cvv-input block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-700 peer" placeholder=" " required maxlength="4"/>
+                <label for="numero" class="peer-focus:font-medium absolute text-lg text-purple-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" >CVV</label>
+            </div>
+        <div class="flex justify-center">
+          <input type="submit" value="PAGAR" class="submit-btn bg-gradient-to-r from-purple-800 to-purple-400
+          rounded-lg p-5 mb-5 text-white w-full md:w-1/2">
+        </div>
+      </form>
+  
+  </div>    
+      
+  
+  
+  
+  
+  
+  <script>
+  document.querySelector('.card-number-input').oninput = () =>{
+      document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value
+      .replace(/\s/g,'')
+      .replace(/\D/g, '')
+      .replace(/([0-9]{4})/g, '$1 ')
+      .trim();
+      document.querySelector('.card-number-input').value = document.querySelector('.card-number-box').innerText
+      if(document.querySelector('.card-number-input').value == ''){
+        document.querySelector('.card-number-box').innerText = '#### #### #### ####';
+        document.getElementById('logo-tarjeta').src="";
+            document.getElementById('logo-tarjeta-back').src="";
+	}
+	    if(document.querySelector('.card-number-input').value[0] == 4){
+            document.getElementById('logo-tarjeta').src="/img/tarjeta/visa.png";
+            document.getElementById('logo-tarjeta-back').src="/img/tarjeta/visa.png"
+        }
+	 else if(document.querySelector('.card-number-input').value[0] == 5){
+		document.getElementById('logo-tarjeta').src="/img/tarjeta/master.png";
+            document.getElementById('logo-tarjeta-back').src="/img/tarjeta/master.png"
+	}
+    }
+  
+  document.querySelector('.card-holder-input').oninput = () =>{
+      document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value
+      .toUpperCase() 
+      .replace(/[0-9]/g, '')
+      .trim();
+      //falta que ponga .value
+      document.querySelector('.card-holder-input').value = document.querySelector('.card-holder-name').innerText
+      if(document.querySelector('.card-holder-input').value == ''){
+        document.querySelector('.card-holder-name').innerText = 'JUAN PEREZ';	}
+  }
+  
+  document.querySelector('.month-input').oninput = () =>{
+      document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
+  }
+  
+  document.querySelector('.year-input').oninput = () =>{
+      document.querySelector('.exp-year').innerText = document.querySelector('.year-input').value;
+  }
+  
+  document.querySelector('.cvv-input').onmouseenter = () =>{
+      document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(-180deg)';
+      document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
+  }
+  
+  document.querySelector('.cvv-input').onmouseleave = () =>{
+      document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(0deg)';
+      document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
+  }
+  
+  document.querySelector('.cvv-input').oninput = () =>{
+      document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value
+      .replace(/\s/g,'')
+      .replace(/\D/g, '');
+      document.querySelector('.cvv-input').value = document.querySelector('.cvv-box').innerText;
+  }
+  
+  </script>
+  
+  
+  
+    <!-- RESUMEN PEDIDO -->    
+    <div class="bg-zinc-300 col-span-2 p-2 md:block hidden">
+      <div class="flex">
+        <img class="object-scale-down h-20 w-20" src="/img/productos/churu-56g.jpg" alt="churu 56gr">
+        <div class="flex flex-col flex-grow">
+        <h2 class="text-lg min-w-full">Snack gato churu atún y salmón</h2>
+        <h3>56 g</h3>
+        <h1 class="text-right text-lg text-violet-900">$2.900</h1>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- FOOTER -->
+
+    <div class="">
+      <footer id="footer" class="relative z-50 bg-purple-700">
+          <div tabindex="0" aria-label="footer" class="focus:outline-none border-t   py-16">
+              <div class="mx-auto container px-4 xl:px-12 2xl:px-4">
+                  <div class="lg:flex">
+                      <div class="w-full lg:w-1/2 mb-16 lg:mb-0 flex">
+                          <div class="w-full lg:w-1/2 px-6">
+                              <ul>
+                                  <li><a class="focus:outline-none focus:underline  text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Inicio</a></li>
+                                  <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Productos</a></li>
+                                  <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">¿Como comprar?</a></li>
+                                  <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Sobre Nosotros</a></li>
+                                  <li class="mt-6"><a href="javascript:void(0)" class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Contactanos</a></li>
+                              </ul>
+                          </div>
+                          <div class="w-full lg:w-1/2 px-6">
+                              <ul>
+                                  <li><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Marcas Asociadas</a></li>
+                                  <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Blog</a></li>
+                                  <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Trabaja con nosotros</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="w-full lg:w-1/2 flex">
+                          <div class="w-full lg:w-1/2 px-6">
+                              <ul>
+                                  <li><a href="javascript:void(0)" class="focus:underline focus:outline-none text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Politicas de privacidad</a></li>
+                                  <li class="mt-6"><a class="focus:underline focus:outline-none text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Terminos de servicio</a></li>
+                              </ul>
+                          </div>
+                          <div class="w-full lg:w-1/2 px-6 flex flex-col justify-between">
+                              <div class="flex items-center mb-6">
+                                  
+                                  <a aria-label="Twitter"  href="javascript:void(0)" class="ml-4">
+                                      <div class="">
+                                         <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_1-svg2.svg" alt="Twitter">
+                                         <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_1-svg2dark.svg" alt="Twitter">
+                                      </div>
+                                  </a>
+                              </div>
+                              
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </footer>
+    </div>
+    <script>
+      var radio=document.getElementsByName("countries");
+   var len=radio.length;
+   for(var i=0;i<len;i++)
+   {
+       radio[i].disabled=true;
+   }
+
+    </script>
+    <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
+    <script src="/index.js"></script>
+</body>
+</html>
