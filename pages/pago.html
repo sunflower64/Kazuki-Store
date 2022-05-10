@@ -95,7 +95,6 @@
                 <label for="numero" class="peer-focus:font-medium absolute text-lg text-purple-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">NUMERO DE TARJETA</label>
             </div>
             <div class="relative z-0 w-full mb-6 group">
-                <input type="text" name="nombre" class="card-holder-input block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-700 peer" placeholder=" " required maxlength="40"/>
                 <label for="nombre" class="peer-focus:font-medium absolute text-lg text-purple-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">NOMBRE DE TITULAR</label>
             </div>
             <div class="flex flex-row pb-5">
@@ -175,7 +174,7 @@
       .replace(/[0-9]/g, '')
       .trim();
       //falta que ponga .value
-      document.querySelector('.card-holder-input').value = document.querySelector('.card-holder-name').innerText
+      document.querySelector('.card-holder-input') = document.querySelector('.card-holder-name').innerText
       if(document.querySelector('.card-holder-input').value == ''){
         document.querySelector('.card-holder-name').innerText = 'JUAN PEREZ';	}
   }
