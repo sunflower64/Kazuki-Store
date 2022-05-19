@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/svg+xml" href="img/store.ico" sizes="any">
+    <title>Kozuki Store</title>
+
+    <link rel="stylesheet" href="css/valdiacion.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js" > </script>
+
+    <script src="js/validacion_jquery.js"></script>
+
+    <script>
+        
+//        $(document).ready(function(){
+//            $("").blur(function(){
+//                
+//            });
+//        });
+
+
+        $(document).ready(function(){
+
+//////// TOGLE DE VISIBILIDAD PARA REGISTRO E INGRESO
+
+            var div_registro = document.getElementById("div_registro");
+            var div_ingreso = document.getElementById("div_ingreso");
+
+            $(".activar_registro").click(function(){
+
+                div_registro.classList.remove("hidden");
+                div_ingreso.classList.add("hidden");
+
+            });
+
+            $(".activar_ingreso").click(function(){
+
+                div_registro.classList.add("hidden");
+                div_ingreso.classList.remove("hidden");
+            });
+        });
+    </script>
+
+
+    <style>
+        /* color para alertas y campos en validaciones    */
+        
+        label.error{
+            color: red;
+        }
+        input.error{
+            border-color: red;
+            
+        }
+
+    </style>
+    
+
+</head>
+
+<body>
+
+
+    <div class=" mx-auto">
+
+
+        <nav class="bg-pink-700 border-white-200 px-2 sm:px-4 py-2.5 rounded "> <!-- NAV-->
+            <div class="container flex flex-wrap justify-between items-center mx-auto">
+              <a href="index.html" class="flex items-center">
+                  <img src="img/icon.png" class="mr-3 h-6 sm:h-9" alt="Kozuki Logo" />
+                  <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Kozuki Store</span>
+              </a>
+              <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                <svg class="hidden w-6 h-6" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </button>
+              <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+                <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                  <li>
+                    <a href="#" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Inicio</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">Productos</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">¿Como comprar?</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">Sobre Nosotros</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 pr-4 pl-3 text-white hover:bg-white-50 md:hover:bg-transparent md:border-0 md:hover:text-white-700 md:p-0">Contacto</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+
+<!--      PANTALLA     -->
+
+          <div class="grid grid-cols-12 " > 
+
+<!------------------ FORM REGISTRO--------------->
+
+
+
+            <div id="div_registro" class="hidden order-first flex-shrink-1
+                grid lg:col-span-4 col-span-12 grid-rows-1 justify-center     ">
+
+                <div class=" flex items-center row-span-1 px-5   ">
+
+                    <!----------------------- COMIENZO FORM -->
+                    <form name="form_registro"
+                    id="form_registro" action="" method="POST" enctype="multipart/form-data"  class="w-full max-w-lg flex-shrink-0  "> 
+
+                        <div class="text-base text-2xl  text-center w-full my-5">CREA TU CUENTA</div>
+                            <hr class="border-t border-gray-300 mb-6">
+                        
+    <!----------------------- EMAIL -->
+                        <div class=" flex flex-wrap -mx-3 mb-3  "> 
+
+                            <div class="w-full  px-3 mb-3 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="reg_email">
+                                Email
+                                </label>
+
+                                <input class=" rounded-md shadow-lg appearance-none block w-full text-gray-700 border-b border-pink-300  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                                id="reg_email" name="reg_email" type="email" placeholder="correo@mail.com">
+                                <p id="alerta_email" class="form_alerta text-red-500 text-xs italic"></p>
+                            </div>
+
+                        </div>
+    <!---------------------------------- NOMBRE USUARIO  -->                   
+                        <div class="flex flex-wrap -mx-3 mb-6 "> 
+                            
+                            <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="reg_nombre">
+                                NOMBRE
+                                </label>
+                                <input class="form_ rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
+                                id="_nombre" name="reg_nombre" type="text" placeholder="Armando">
+                                <p id="reg_nombre" class="form_alerta text-red-500 text-xs italic"></p>
+                            </div>
+
+                            <div class="w-full md:w-1/2 px-3">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="reg_apellido">
+                                APELLIDO
+                                </label>
+                                <input class="form_ rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                                id="reg_apellido" name="reg_apellido" type="text" placeholder="Paredes">
+                                <p id="alerta_nombre" class="form_alerta text-red-500 text-xs italic"></p>
+                            </div>
+                        </div>
+
+
+    <!------------------------------ CONTRASEÑA -->
+
+                        <div class="flex flex-wrap -mx-3 mb-6"> 
+
+                            <div class="w-full md:w-1/2 px-3 md:mb-0 mb-5">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="reg_contraseña">
+                                Contraseña
+                                </label>
+                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
+                                id="reg_contraseña" name="reg_contraseña" type="password" placeholder="******************">
+                                <p class="form_alerta text-red-600 text-xs italic"></p>
+                            </div>
+                            <div class="w-full md:w-1/2 px-3 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="reg_confcontraseña">
+                                Confirmar contraseña
+                                </label>
+                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                                id="reg_confcontraseña" name="reg_confcontraseña" type="password" placeholder="******************">
+                                <p class="form_alerta text-red-600 text-xs italic"></p>
+                            </div>
+                        </div>
+
+                        <fieldset id="" class="my-3" >
+
+                            <div class="flex items-center mb-5">
+                                <label for="reg_chbox" class=" mr-2 text-sm font-medium text-gray-900 dark:text-gray-300">Accepo los <a href="#" class=" text-blue-600 hover:underline dark:text-blue-500">terminos y condiciones </a> </label>
+                                
+                                <input  id="reg_chbox" name="reg_chbox" type="checkbox" value="" class="checkbox mr-4 w-4 h-4 border  text-blue-600 bg-gray-100 border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
+                            </div>
+                        </fieldset>
+
+                        <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-lg 
+                                    hover:bg-gray-700 focus:outline-none focus:shadow-outline shadow-lg bg-gray-400" type="submit">
+                                    Registrar Cuenta
+                        </button>
+
+                        <p class="">Ya tienes cuenta? <button type="reset" class="activar_ingreso pb-4 text-base text-purple-700"> Ingresa aqui</button></p>
+
+                    </form>
+
+                </div>
+
+            </div>
+            
+<!---------------------------------IMAGEN -->
+
+            <div class=" md:col-span-8 lg:block hidden order-2 overflow-hidden">
+                    <img src="img/Para fondo.jpg" class="object-cover min-h-full "
+                    alt="">
+            </div>
+            
+<!---------------------------------FORM 2  INICIO SESION -->
+
+            <div id="div_ingreso" class=" order-last
+                grid lg:col-span-4  col-span-12 grid-rows-1 flex-shrink-1 justify-center pb-10 sm:p-0 lg:pb-0 min-w-screen  ">
+
+                <div class=" max-h-screen flex items-center row-span-1 px-10  ">
+                    
+                    <!----------------------- COMIENZO FORM -->
+                    <form name="form_ingreso" id="form_ingreso" action="" method="POST" enctype="multipart/form-data"  class="w-full max-w-lg  "> 
+
+                        <div class="text-base text-2xl  text-center w-full my-5">Inicia Sesion</div>
+                            <hr class="border-t border-gray-300 mb-6">
+                        
+                <!----------------------- EMAIL -->
+
+                        <div class=" flex flex-wrap -mx-3 mb-3  "> 
+
+                            <div class="w-full  px-3 mb-3 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="ing_email">
+                                Email
+                                </label>
+
+                                <input class="rounded-md shadow-lg appearance-none block w-full text-gray-700 border-b border-pink-300  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100"
+                                id="ing_email" name="ing_email" type="email" placeholder="correo@mail.com">
+                                <p id="alerta_email" class="form_alerta text-red-500 text-xs italic"></p>
+                            </div>
+
+                        </div>
+
+                <!------------------------------ CONTRASEÑA -->
+
+                        <div class="flex flex-wrap -mx-3 mb-6"> 
+
+                            <div class="w-full px-3 md:mb-0 mb-5">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="ing_contraseña">
+                                Contraseña
+                                </label>
+                                <input class="rounded-md shadow-lg appearance-none block w-full  text-gray-700 border-b border-gray-500  py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100" 
+                                id="ing_contraseña" name="ing_contraseña" type="password" placeholder="*****************">
+                                <p class="alerta_ text-red-600 text-xs italic"></p>
+                            </div>              
+                        </div>
+
+                        <hr class="border-t border-gray-300 mb-10  ">
+
+                        <button class="w-full px-4 py-2 mb-5 font-bold text-white border border-gray-300 rounded-lg 
+                                    hover:bg-gray-700 focus:outline-none focus:shadow-outline shadow-lg bg-gray-400" type="submit">
+                                    Acceder
+                        </button>
+
+                        <p>No tienes Cuenta? <button type="reset" class="activar_registro pb-4 text-base text-purple-700"> Registrate aqui</button></p>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+     
+    <div class="">
+        <footer id="footer" class="relative z-50 bg-pink-700">
+            <div tabindex="0" aria-label="footer" class="focus:outline-none border-t   py-16">
+                <div class="mx-auto container px-4 xl:px-12 2xl:px-4">
+                    <div class="lg:flex">
+                        <div class="w-full lg:w-1/2 mb-16 lg:mb-0 flex">
+                            <div class="w-full lg:w-1/2 px-6">
+                                <ul>
+                                    <li><a class="focus:outline-none focus:underline  text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Inicio</a></li>
+                                    <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Productos</a></li>
+                                    <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">¿Como comprar?</a></li>
+                                    <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Sobre Nosotros</a></li>
+                                    <li class="mt-6"><a href="javascript:void(0)" class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Contactanos</a></li>
+                                </ul>
+                            </div>
+                            <div class="w-full lg:w-1/2 px-6">
+                                <ul>
+                                    <li><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Marcas Asociadas</a></li>
+                                    <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Blog</a></li>
+                                    <li class="mt-6"><a class="focus:outline-none focus:underline text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Trabaja con nosotros</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 flex">
+                            <div class="w-full lg:w-1/2 px-6">
+                                <ul>
+                                    <li><a href="javascript:void(0)" class="focus:underline focus:outline-none text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Politicas de privacidad</a></li>
+                                    <li class="mt-6"><a class="focus:underline focus:outline-none text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">Terminos de servicio</a></li>
+                                </ul>
+                            </div>
+                            <div class="w-full lg:w-1/2 px-6 flex flex-col justify-between">
+                                <div class="flex items-center mb-6">
+                                    
+                                    <a aria-label="Twitter"  href="javascript:void(0)" class="ml-4">
+                                        <div class="">
+                                           <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_1-svg2.svg" alt="Twitter">
+                                           <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_1-svg2dark.svg" alt="Twitter">
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+</body>
+</html>

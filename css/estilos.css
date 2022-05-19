@@ -1,0 +1,10 @@
+.container .card-container .front{
+    backface-visibility: hidden;
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.container .card-container .back{
+    backface-visibility: hidden;
+    transform: perspective(1000px) rotateY(180deg);
+
+}
